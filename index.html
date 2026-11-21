@@ -539,7 +539,9 @@
       .rmsg.err {
         color: #c62f4d;
       }
-    </style>
+    
+.castle{display:block;width:min(100%,340px);height:auto;margin:10px auto 0}
+</style>
   </head>
   <body>
     <main class="wrap">
@@ -639,7 +641,7 @@
           </div>
           <p><strong>Jollibee San Pedro</strong></p>
           <p>Hagonoy, Bulacan</p>
-          <p class="time">🕗 8:00 AM – 10:00 AM</p>
+          <p class="time">🕘 9:00 AM – 10:00 AM</p>
           <p>Fairytale Land theme 👑</p>
           <a
             class="map"
@@ -655,7 +657,7 @@
           <div class="big">Apo Kulas Venue</div>
           <p>Purok 4, San Nicolas, Hagonoy, Bulacan</p>
           <p>Join us as we continue the celebration with family and friends.</p>
-          <p class="time">🕗 Time to be announced</p>
+          <p class="time">🕛 12:00 noon onwards</p>
           <a
             class="map"
             href="https://www.google.com/maps/search/?api=1&amp;query=Apo+Kulas+Venue+Purok+4+San+Nicolas+Hagonoy+Bulacan"
@@ -720,7 +722,6 @@
               colors to complement the celebration’s theme. 🤍🌸
             </p>
             <div class="sw" aria-label="Suggested colors">
-              <span><i style="background: #fff"></i>White</span>
               <span><i style="background: #e8dcc8"></i>Beige</span>
               <span><i style="background: #fff6dc"></i>Cream</span>
               <span><i style="background: #f9d5dc"></i>Blush</span>
@@ -789,7 +790,19 @@
           </form>
         </div>
 
-        <p class="foot">
+        <svg class="castle" viewBox="0 0 320 150" role="img" aria-label="Fairytale castle with a rainbow">
+    <g fill="none" stroke-width="7" stroke-linecap="round" opacity=".85">
+      <path d="M30 140A130 130 0 0 1 290 140" stroke="#f7b8cf"/>
+      <path d="M44 140A116 116 0 0 1 276 140" stroke="#fbd9a8"/>
+      <path d="M58 140A102 102 0 0 1 262 140" stroke="#cfe3fa"/>
+    </g>
+    <g fill="#f6c1d3"><rect x="118" y="86" width="84" height="54"/><rect x="104" y="66" width="30" height="74"/><rect x="186" y="66" width="30" height="74"/><rect x="144" y="46" width="32" height="94"/></g>
+    <g fill="#e1789d"><path d="M100 66l19-32 19 32z"/><path d="M182 66l19-32 19 32z"/><path d="M140 46l20-38 20 38z"/><path d="M160 8v-8l9 3z" fill="#f4a29a"/></g>
+    <g fill="#fffdfd"><path d="M150 140v-20a10 10 0 0 1 20 0v20z"/><ellipse cx="160" cy="68" rx="5" ry="8"/><ellipse cx="119" cy="92" rx="4" ry="7"/><ellipse cx="201" cy="92" rx="4" ry="7"/></g>
+    <rect x="10" y="139" width="300" height="5" rx="2.5" fill="#f6c1d3"/>
+  </svg>
+
+  <p class="foot">
           We look forward to celebrating this special day with you! 🤍
         </p>
       </section>
@@ -927,10 +940,7 @@
           .then(function (d) {
             setSlots(d.remaining);
           })
-          .catch(function () {
-            slots.textContent = "";
-            setSlots(6);
-          });
+          .catch(function () { setSlots(6); slots.textContent = "Couldn’t check the slots right now. Please try again later."; });
         form.addEventListener("change", function () {
           gw.hidden = form.elements.status.value === "No";
         });
